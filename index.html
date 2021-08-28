@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="data:image/png;base64,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" sizes="64x64">
+    <title>Casual Shirts For Men</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-light bg-white">
+                        <div class="container">
+                          <a class="navbar-brand" href="#">
+                            <img src="data:image/png;base64,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" alt="" >
+                          </a>
+                          <div>
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="#">MEN</a>
+                                  </li>
+                                <li class="nav-item">
+                                  <a class="nav-link text-dark" href="#">WOMEN</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link text-dark" href="#">KIDS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="#">HOME&LIVING</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link text-dark" href="#">BEAUTY</a>
+                                  </li>
+                              </ul>
+                          </div>
+                        <div>
+                            <form class="d-flex">
+                              <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                              </svg></span>
+                                <input class="form-control me-2" type="search" placeholder="Search for products and more" aria-label="Search">
+                                
+                              </form>
+                        </div>
+                        <div>
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="#">profile</a>
+                                  </li>
+                                <li class="nav-item">
+                                  <a class="nav-link text-dark" href="#">Wishlist</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link text-dark" href="#">Bag</a>
+                                </li>
+                              </ul>
+                        </div>
+                      </nav>
+                </div>
+            </div>
+           <div class="col-12 p-2">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link text-black-50" href="#">Home/</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link text-black-50" href="#">Clothing/</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-black-50" href="#">Shirts/</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">Casual Shirts For Men</a>
+                  </li>
+              </ul>
+              <h6>Casual Shirts For Men
+                - 50548 items</h6>
+           </div>
+           <div class="col-12 p-2">
+             <div class="row">
+              <div class="col-3">
+                <ul class="nav">
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">FILTERS</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-9">
+                <ul class="nav">
+                  <li class="nav-item">
+                    <a class="nav-link text-black-50" href="#">Add-ons ></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black-50" href="#">Bundles</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black-50" href="#">Character</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black-50" href="#">Collar</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black-50" href="#">Country of origin</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black-50" href="#">fabric</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black-50" href="#">fabric2</a>
+                  </li>
+                </ul>
+              </div> 
+             </div>
+               
+           </div>
+           <div class="container-fluid">
+             <div class="row">
+               <div class="col-3 p-3">
+                <h6>BRAND</h6>
+                <div>
+                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                 <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                   Roadster
+                 </label>
+                </div>
+                <div>
+                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                 <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                   Lauis Philip Sport
+                 </label>
+                </div>
+                <div>
+                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                 <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                   Parx
+                 </label>
+                </div>
+                <div>
+                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                 <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                   Allen Solly
+                 </label>
+                </div>
+                <div>
+                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                 <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                   Black Berrys
+                 </label>
+                </div>
+                <div>
+                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                 <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                   ColorPlus
+                 </label>
+                </div>
+                <div>
+                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                 <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                   Peter England
+                 </label>
+                </div>
+                <div>
+                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                 <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                   Spykar
+                 </label>
+                </div>
+                <h6>PRICE</h6>
+                 <div>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                    RS.349 to RS.3012
+                  </label>
+                 </div>
+                 <div>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                    RS.349 to RS.3012
+                  </label>
+                 </div>
+                 <div>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                    RS.349 to RS.3012
+                  </label>
+                 </div>
+                 <div>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                    RS.349 to RS.3012
+                  </label>
+                 </div>
+                 <h6>COLOR</h6>
+                 <div>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                    Blue
+                  </label>
+                 </div>
+                 <div>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                    White
+                  </label>
+                 </div>
+                 <div>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                    NavyBlue
+                  </label>
+                 </div>
+                 <div>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                    Black
+                  </label>
+                 </div>
+                 <div>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                    Green
+                  </label>
+                 </div>
+                 <div>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                   Grey
+                  </label>
+                 </div>
+                 <div>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                    Red
+                  </label>
+                 </div>
+                 <h6>DISCOUNT PRICE</h6>
+                 <div>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                    10% and above
+                  </label>
+                 </div>
+                 <div>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                    20% and above
+                  </label>
+                 </div>
+                 <div>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                    30% and above
+                  </label>
+                 </div>
+                 <div>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                    40% and above
+                  </label>
+                 </div>
+                 <div>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                    50% and above
+                  </label>
+                 </div>
+                 <div>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                    60% and above
+                  </label>
+                 </div>
+                 <div>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                    70% and above
+                  </label>
+                 </div>
+                 <div>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label style="font-family: 'Courier New', Courier, monospace;font-size: 14px;" class="form-check-label text-black-50" for="flexCheckDefault">
+                    80% and above
+                  </label>
+                 </div>
+               </div>
+               <!--our main frame-->
+              <div class="col-9 p-2">
+                 <div class="row">
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2006852/2018/4/3/11522753460014-HIGHLANDER-Men-Blue--White-Slim-Fit-Checked-Casual-Shirt-2811522753459810-1.jpg" alt="">
+                   </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/7488102/2019/8/22/8002a744-0dad-4dbb-9481-cf0090134c3b1566454086786-Dennis-Lingo-Men-Pink-Slim-Fit-Solid-Casual-Shirt-9891566454-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                     <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2414313/2018/3/13/11520926368526-HERENOW-Men-Red--Black-Regular-Fit-Checked-Casual-Shirt-8881520926368447-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10456354/2019/8/22/d56e75f6-f1a7-4fdd-b430-51befb36f88d1566454760527-Campus-Sutra-Men-Colourblocked-Casual-Spread-Shirt-290156645-1.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.400</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.665</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.849</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.399</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/14285492/2021/7/13/0e831310-d71f-4427-84b2-925a8460bc831626177299727-Mens-100--Cotton-Slim-Fit-Peach-Shirts-2831626177299288-1.jpg" alt="">
+                   </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10456354/2019/8/22/d56e75f6-f1a7-4fdd-b430-51befb36f88d1566454760527-Campus-Sutra-Men-Colourblocked-Casual-Spread-Shirt-290156645-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                     <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2256568/2018/4/3/11522749277396-HIGHLANDER-Men-Teal-Slim-Fit-Solid-Casual-Shirt-7301522749277212-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1272502/2018/2/5/11517823086440-Highlander-White-Slim-Fit-Casual-Shirt-161517823086304-1.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.700</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.325</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.949</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.699</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/7488103/2019/8/22/7142624c-9184-47db-bf67-5610bd756c761566454100661-Dennis-Lingo-Men-Green-Slim-Fit-Solid-Casual-Shirt-358156645-1.jpg" alt="">
+                   </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1858747/2017/8/28/11503925666468-Roadster-Men-Black--Red-Checked-Casual-Shirt-6171503925666405-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                     <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10673544/2019/9/24/6b9c7688-7ca2-4d11-9e5b-a3745ecd8f761569310358973-The-Indian-Garage-Co-Men-Shirts-8481569310357131-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/9/22/18c288f2-3d9a-420d-9d9b-a622d33396991569112593439-1.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.500</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.665</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.749</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.899</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/13770572/2021/7/5/d21d42fa-6fde-4e62-b867-6f3ee624c8911625459863295-Nautica-Men-Beige--White-Classic-Fit-Floral-Printed-Casual-S-1.jpg" alt="">
+                   </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/13663056/2021/7/23/6bfee0d4-7605-4f4f-a62e-944810d7341f1627030339457-Roadster-Men-Shirts-9641627030338879-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                     <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2018/11/24/8e66da6e-7b04-4ecd-9714-abcd375632a11543052157516-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/12365722/2020/11/17/aa196d28-effd-4ddb-a3e8-0f477b3738d71605611521018-Levis-Men-Shirts-9481605611519103-1.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.500</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.665</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.749</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.899</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/7288105/2018/10/24/a059288c-512c-468a-87d4-ce36b52840441540360274049-HERENOW-Men-Shirts-5241540360273894-1.jpg" alt="">
+                   </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/11964920/2020/6/24/aba49564-4134-4126-ab19-8df7ae2a34d71593000903721HIGHLANDERMenWhiteSlimFitPrintedCasualShirt1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                     <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/9/22/47389606-96a4-469d-b469-14e94c1612341569136291008-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1729391/2019/8/28/a9d4a7aa-af7e-4a37-a9d4-a94dc8c057e81566992341974-WROGN-Navy-Blue-Slim-Fit-Checked-Casual-Shirt-52415669923403-1.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.500</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.665</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.749</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.899</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/13770586/2021/6/12/fbf29097-680a-495b-a251-c28760804bbf1623494610663-Nautica-Men-Shirts-71623494610003-1.jpg" alt="">
+                   </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1265392/2020/1/20/12fc0ced-84b7-4933-8cbc-5a7832c7686e1579504849580-Highlander-Black-Slim-Fit-Casual-Shirt-2521579504847937-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                     <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/10708234/2020/9/10/6bed3d2a-606a-46fd-be82-bc8e4709de4e1599715667943-US-Polo-Assn-Men-Blue-Regular-Fit-Solid-Casual-Shirt-9011599-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/10187555/2019/9/26/4cc4ce57-09df-42ff-b5c3-092019d711ae1569502608755-WROGN-Men-Burgundy-Regular-Fit-Solid-Casual-Shirt-9071569502-1.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.500</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.665</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.749</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.899</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/10867924/2019/10/25/97f82ccc-b34c-4a78-ba2e-15387dd81bae1571993232479-Bene-Kleed-Men-Beige--Beige-Slim-Fit-Printed-Casual-Shirt-59-1.jpg" alt="">
+                   </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/13257460/2021/7/23/091ea738-dfde-454d-a96d-fb42a2538ea81627017156413-Mast--Harbour-Men-Shirts-4821627017155731-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                     <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/2129960/2019/12/4/c5f17385-a6c1-4727-982f-b27a7780bf211575437376659-HIGHLANDER-Men-Navy--Red-Slim-Fit-Checked-Casual-Shirt-14615-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/13120356/2021/1/15/bcee293f-3edf-4b43-b50a-1f06db2024f11610708252295-Mast--Harbour-Men-Shirts-7861610708250521-1.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.500</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.665</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.749</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.899</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/10/10/f0e6794f-29af-473b-9376-fd53f3f76df11570703044382-1.jpg" alt="">
+                   </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/6832669/2018/8/24/efba132c-0215-47fe-8f79-63fe1f0b0e4e1535114456996-WROGN-Men-Shirts-9431535114455282-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                     <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/10550772/2021/7/2/7d928d45-9037-4b36-a81d-3a04da56e29c1625211765694-Mast--Harbour-Men-White--Brown-Regular-Fit-Checked-Casual-Sh-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/2454220/2019/3/15/dadd49f5-54a9-47b8-94f0-77dfca26e8271552650324660-HIGHLANDER-Men-Blue-Slim-Fit-Solid-Casual-Shirt-912155265032-1.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.500</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.665</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.749</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.899</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/9/24/5d2c8a0e-bfcb-4663-aaa8-c4656b9c78401600902484457-1.jpg" alt="">
+                   </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14943228/2021/8/16/d7e0be0d-df1c-44dd-85f5-f8c330677c431629100891356-Allen-Solly-Men-Shirts-6531629100890661-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                     <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2414313/2018/3/13/11520926368526-HERENOW-Men-Red--Black-Regular-Fit-Checked-Casual-Shirt-8881520926368447-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13800698/2021/7/20/5184e277-426c-4a3e-8448-03544eb766b81626784238386-US-Polo-Assn-Men-Shirts-6321626784237831-1.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.500</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.665</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.749</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.899</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2006852/2018/4/3/11522753460014-HIGHLANDER-Men-Blue--White-Slim-Fit-Checked-Casual-Shirt-2811522753459810-1.jpg" alt="">
+                   </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2220379/2017/11/24/11511521985015-Roadster-Men-Multicoloured-Slim-Fit-Checked-Casual-Shirt-3321511521984827-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                     <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/9869571/2019/8/13/93a7b5ba-a2e9-4cae-aaef-5b1d209ae2711565673947864-Mast--Harbour-Men-Shirts-4961565673946411-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/7488108/2018/9/26/fe316409-76eb-486c-bb3c-b572344a5c251537944982515-Dennis-Lingo-Men-Dusty-Pink-Slim-Fit-Solid-Casual-Shirt-8561537944982305-1.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.500</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.665</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.749</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.899</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2006852/2018/4/3/11522753460014-HIGHLANDER-Men-Blue--White-Slim-Fit-Checked-Casual-Shirt-2811522753459810-1.jpg" alt="">
+                   </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/7488102/2019/8/22/8002a744-0dad-4dbb-9481-cf0090134c3b1566454086786-Dennis-Lingo-Men-Pink-Slim-Fit-Solid-Casual-Shirt-9891566454-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                     <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2414313/2018/3/13/11520926368526-HERENOW-Men-Red--Black-Regular-Fit-Checked-Casual-Shirt-8881520926368447-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10456354/2019/8/22/d56e75f6-f1a7-4fdd-b430-51befb36f88d1566454760527-Campus-Sutra-Men-Colourblocked-Casual-Spread-Shirt-290156645-1.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.500</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.665</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.749</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.899</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2006852/2018/4/3/11522753460014-HIGHLANDER-Men-Blue--White-Slim-Fit-Checked-Casual-Shirt-2811522753459810-1.jpg" alt="">
+                   </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/7488102/2019/8/22/8002a744-0dad-4dbb-9481-cf0090134c3b1566454086786-Dennis-Lingo-Men-Pink-Slim-Fit-Solid-Casual-Shirt-9891566454-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                     <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2414313/2018/3/13/11520926368526-HERENOW-Men-Red--Black-Regular-Fit-Checked-Casual-Shirt-8881520926368447-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10456354/2019/8/22/d56e75f6-f1a7-4fdd-b430-51befb36f88d1566454760527-Campus-Sutra-Men-Colourblocked-Casual-Spread-Shirt-290156645-1.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.500</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.665</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.749</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.899</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2006852/2018/4/3/11522753460014-HIGHLANDER-Men-Blue--White-Slim-Fit-Checked-Casual-Shirt-2811522753459810-1.jpg" alt="">
+                   </div>
+                    <div class="col-3">
+                      <img class="img-fluid" src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/7488102/2019/8/22/8002a744-0dad-4dbb-9481-cf0090134c3b1566454086786-Dennis-Lingo-Men-Pink-Slim-Fit-Solid-Casual-Shirt-9891566454-1.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.500</h6>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="p-2">HIGHLANDER</h6>
+                      <h6 class="text-black-50">Men Slim Fit Casual Shirt</h6>
+                      <h6>RS.665</h6>
+                    </div>
+                    
+                  </div>
+               </div>
+             </div>
+             </div>
+           </div>
+           <div class="container">
+             <div class="row bg-warning">
+               <h6 style="text-align: center;font-size: 15px;" class="text-dark">© AJITH D 2021</h6>
+             </div>
+           </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
